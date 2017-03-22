@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+        
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Sailaway</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+        <label>Benutzername: </label>
+        <p:inputText id="textboxBenutzername"> </p:inputText>
+        </h:form>
+        <br></br>
+        <br></br>
+        <h:form>
+        <label>Passwort: </label>
+        <p:inputText id="textboxPasswort"> </p:inputText>
+        </h:form>
+        <br></br>
+        <br></br>
+     <!-- AUSWAHL MENÜ -->
+    <h:form>
+    <p:messages autoUpdate="true" />
+ 
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+        <p:outputLabel for="console" value="Auswählen:" />
+        <p:selectOneMenu id="console" value="#{SelectOneMenuView.console}" style="width:200px">
+            <f:selectItem itemLabel="Fahrten Applikation" itemValue="Fahrten" />
+            <f:selectItem itemLabel="Werft Applikation" itemValue="Werft" />
+        </p:selectOneMenu>
+    </h:panelGrid>
+    </h:form>
+        
+     
+     
+     <!--Anmelden-->
+    <p:button id="buttonAnmelden" value="Registrieren">
+    </p:button>
+    </h:body>
+</html>

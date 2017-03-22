@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sailaway</title>
+    </h:head>
+    <h:body>
+        <!-- LOGIN -->
+        <p:link outcome="loginPage" value="Login">
+        </p:link>
+        
+        <br></br>
+        <!-- REGISTER -->
+         <p:link outcome="registPage" value="Registrieren">
+        </p:link>
+        
+         <!-- MASCHINE -->
+        <h:form>
+        <p:panel id="basic" header="Maschine" style="margin-bottom:20px">
+        <h:panelGrid columns="1" cellpadding="10">
+            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+        </h:panelGrid>
+        </p:panel>   
+        </h:form>
+        
+         <!-- SEGEL -->
+        <h:form>
+        <p:panel id="basic" header="Segel" style="margin-bottom:20px">
+        <h:panelGrid columns="1" cellpadding="10">
+            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+        </h:panelGrid>
+        </p:panel>   
+        </h:form>
+         
+        <!-- RADIO -->
+        <h:form>
+        <p:panel id="basic" header="RADIO" style="margin-bottom:20px">
+        <h:panelGrid columns="1" cellpadding="10">
+            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+        </h:panelGrid>
+        </p:panel>   
+        </h:form>
+        
+        <!-- SCHIFF -->
+        <h:form>
+        <p:panel id="basic" header="SCHIFF" style="margin-bottom:20px">
+        <h:panelGrid columns="1" cellpadding="10">
+            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+        </h:panelGrid>
+        </p:panel>   
+        </h:form>
+         
+        <!--SEEKARTE, WETTER, RADAR, WIND, HAFEN -->
+    <h:form id="form">
+        
+        <p:tabView>
+            <!-- SEEKARTE -->
+            <p:tab title="Seekarte">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+        
+            
+            <!-- WETTER -->
+            <p:tab title="WETTER">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+            
+            <!-- RADAR -->
+            <p:tab title="RADAR">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+            
+            <!-- WIND -->
+            <p:tab title="WIND">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+            
+            <!-- HAFEN -->
+            <p:tab title="HAFEN">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+        </p:tabView>
+    </h:form>  
+        
+     <!-- NAVIGATION, LOG, CREW -->
+    <h:form id="form2">
+        
+        <p:tabView>
+            <!-- NAVIGATION -->
+            <p:tab title="NAVIGATION">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+        
+            
+            <!-- LOG -->
+            <p:tab title="LOG">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+            
+            <!-- CREW -->
+            <p:tab title="CREW">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:tab>
+        </p:tabView>
+    </h:form>  
+        
+    </h:body>
+</html>
+

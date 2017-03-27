@@ -1,4 +1,4 @@
-
+package Schiff;
 public class Schiff {
     boolean kil;
         public boolean isKil(){
@@ -449,4 +449,16 @@ public class Schiff {
         public String getBug(){
             return bug;
         }
+        
+        String log;
+
+    public String getLog() {
+        return log;
+    }
+
+    public void setLog(String log) {
+        this.log = log;
+    }
+        
+        
 }

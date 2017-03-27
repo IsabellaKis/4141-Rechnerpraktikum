@@ -1,3 +1,7 @@
+
+package Schiff;
+
+
 import java.util.Timer;
 import java.util.TimerTask;
 import java.text.DecimalFormat;
@@ -455,7 +459,8 @@ public class schiffSimulation {
         }
     }
 
-    public void digest(Request req){
+   
+     public void digest(Request req){
         s.setRl(req.getRl());
         s.setBam(req.getBam());
         s.setSfr(req.getSfr());
@@ -469,12 +474,12 @@ public class schiffSimulation {
 
         // hier fehlen noch die ganzen schalter und listen operationen
         // wpOperation, doLogEntry
-
-        /*if(req.isDoLogEntry()) {
+/*
+        if(req.isDoLogEntry()) {
             doLogEntry();
             req.setDoLogEntry(false); // Schalter zuruecksetzen
         }
-
+/*
         doLogOperation(req.getLgop());
         req.setLgop(""); // Zurücksetzen
 
@@ -486,7 +491,7 @@ public class schiffSimulation {
 
 
     public void neuerImpuls(){
-
+        
         simulation();
 
 
@@ -521,7 +526,7 @@ public class schiffSimulation {
 
       // Verwaltungfunktionen Operationen: i= insert, u=update (immer nur das erste der eingabeliste), d=delete
     // Beispiel "d 3" loescht das dritte objekt
-/*
+
     public void doOperation(String op, List ipl, List obl) {
 
 
@@ -541,7 +546,7 @@ public class schiffSimulation {
         }
 
     }
-
+/*
     public void doLogOperation(String logop) {
 
         if (logop.equals("")) { return; }
@@ -570,7 +575,7 @@ public class schiffSimulation {
 
 
     }
-
+    
     public void doLogEntry() {
 
         List<LogBookEntry> lbe = (List<LogBookEntry>) s.getLogBookEntries();

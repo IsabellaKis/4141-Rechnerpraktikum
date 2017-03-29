@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Wetter.java</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/web/ClientframeworkLogin/index.xhtml</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/ClientframeworkLogin/RegistCode.java</file>
@@ -12,6 +13,60 @@
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/ClientframeworkLogin/LoginCode.java</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Request.java</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/web/ClientframeworkLogin/loginPage.xhtml</file>
+=======
+<<<<<<< HEAD
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/HafeneckpunktController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/RouteController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_beanutil/JsfUtil.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/RouteFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Hafen.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/ArtikelController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/AbstractFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Benutzer.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/HafenController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/ArtikelFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/HafeneckpunktFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Schiff.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/SchiffController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Schiffstyp.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Crewmember.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/CrewFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Hafeneckpunkt.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/SchiffFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Boje.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BestandFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Wegpunkte.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Regatta.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/web/WEB-INF/web.xml</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BestandController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/WegpunkteController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/SchiffstypController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BojeController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/WegpunkteFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/CrewController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/RegattaController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/conf/MANIFEST.MF</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Bestand.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BojeFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/RegattaFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/CrewmemberFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BenutzerFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Crew.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/CrewmemberController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/SchiffstypFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Route.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_beanutil/PaginationHelper.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/HafenFacade.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Artikel.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BenutzerController.java</file>
+            <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Bundle.properties</file>
+=======
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Schiff.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Request.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/schiffSimulation.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Wetter.java</file>
+>>>>>>> 4abcfdf8a0080b55ebbcf81c72b8eca86914baa3
+>>>>>>> origin/master
         </group>
     </open-files>
 </project-private>

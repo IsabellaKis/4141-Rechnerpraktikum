@@ -1,3 +1,13 @@
-/build
+<<<<<<< HEAD
+/build/
 /nbproject/private/private.properties
 /nbproject/private/private.xml
+
+=======
+/build
+/nbproject/private/private.properties
+<<<<<<< HEAD
+/nbproject/private/private.xml
+=======
+>>>>>>> 4abcfdf8a0080b55ebbcf81c72b8eca86914baa3
+>>>>>>> origin/master

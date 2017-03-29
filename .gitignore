@@ -2,11 +2,15 @@ HEAD
 /build/
 /nbproject/private/private.properties
 /nbproject/private/private.xml
+<<<<<<< HEAD
 /nbproject/ant-deploy.xml
 /nbproject/build-impl.xml
 /nbproject/genfiles.properties
 /nbproject/project.properties
 /nbproject/project.xml
+=======
+/nbproject
+>>>>>>> 18a34334201412666048073d7e335a021c899210
 
 /nbproject/private/private.xml
 df9c617ab8c7bf4262a52c9af165896780d02869

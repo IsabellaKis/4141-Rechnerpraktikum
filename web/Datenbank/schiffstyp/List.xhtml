@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSchiffstypTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSchiffstypEmpty}" rendered="#{schiffstypController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{schiffstypController.items.rowCount > 0}">
+                    <h:outputText value="#{schiffstypController.pagination.pageFirstItem + 1}..#{schiffstypController.pagination.pageLastItem + 1}/#{schiffstypController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{schiffstypController.previous}" value="#{bundle.Previous} #{schiffstypController.pagination.pageSize}" rendered="#{schiffstypController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{schiffstypController.next}" value="#{bundle.Next} #{schiffstypController.pagination.pageSize}" rendered="#{schiffstypController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{schiffstypController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_segelflaecheMax}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.segelflaecheMax}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_gewicht}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.gewicht}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_lateralplan}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lateralplan}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_leistungMotor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.leistungMotor}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_abstandHeckSchraube}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.abstandHeckSchraube}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_abstandHeckDrehpunkt}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.abstandHeckDrehpunkt}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_schifflaengeWasserlinie}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schifflaengeWasserlinie}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_maschinenumdrehungMax}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.maschinenumdrehungMax}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_aufrichtemomentMax}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aufrichtemomentMax}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_kraftstoffverbrauch}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kraftstoffverbrauch}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_lateralbremsmoment}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lateralbremsmoment}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_kraftstoffMax}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kraftstoffMax}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_schiffstypId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schiffstypId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffstypTitle_schiff}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schiff}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{schiffstypController.prepareView}" value="#{bundle.ListSchiffstypViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{schiffstypController.prepareEdit}" value="#{bundle.ListSchiffstypEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{schiffstypController.destroy}" value="#{bundle.ListSchiffstypDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{schiffstypController.prepareCreate}" value="#{bundle.ListSchiffstypCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListSchiffstypIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

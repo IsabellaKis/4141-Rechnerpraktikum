@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSchiffstypTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_segelflaecheMax}"/>
+                    <h:outputText value="#{schiffstypController.selected.segelflaecheMax}" title="#{bundle.ViewSchiffstypTitle_segelflaecheMax}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_gewicht}"/>
+                    <h:outputText value="#{schiffstypController.selected.gewicht}" title="#{bundle.ViewSchiffstypTitle_gewicht}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_lateralplan}"/>
+                    <h:outputText value="#{schiffstypController.selected.lateralplan}" title="#{bundle.ViewSchiffstypTitle_lateralplan}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_leistungMotor}"/>
+                    <h:outputText value="#{schiffstypController.selected.leistungMotor}" title="#{bundle.ViewSchiffstypTitle_leistungMotor}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_abstandHeckSchraube}"/>
+                    <h:outputText value="#{schiffstypController.selected.abstandHeckSchraube}" title="#{bundle.ViewSchiffstypTitle_abstandHeckSchraube}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_abstandHeckDrehpunkt}"/>
+                    <h:outputText value="#{schiffstypController.selected.abstandHeckDrehpunkt}" title="#{bundle.ViewSchiffstypTitle_abstandHeckDrehpunkt}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_schifflaengeWasserlinie}"/>
+                    <h:outputText value="#{schiffstypController.selected.schifflaengeWasserlinie}" title="#{bundle.ViewSchiffstypTitle_schifflaengeWasserlinie}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_maschinenumdrehungMax}"/>
+                    <h:outputText value="#{schiffstypController.selected.maschinenumdrehungMax}" title="#{bundle.ViewSchiffstypTitle_maschinenumdrehungMax}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_aufrichtemomentMax}"/>
+                    <h:outputText value="#{schiffstypController.selected.aufrichtemomentMax}" title="#{bundle.ViewSchiffstypTitle_aufrichtemomentMax}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_kraftstoffverbrauch}"/>
+                    <h:outputText value="#{schiffstypController.selected.kraftstoffverbrauch}" title="#{bundle.ViewSchiffstypTitle_kraftstoffverbrauch}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_lateralbremsmoment}"/>
+                    <h:outputText value="#{schiffstypController.selected.lateralbremsmoment}" title="#{bundle.ViewSchiffstypTitle_lateralbremsmoment}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_kraftstoffMax}"/>
+                    <h:outputText value="#{schiffstypController.selected.kraftstoffMax}" title="#{bundle.ViewSchiffstypTitle_kraftstoffMax}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_schiffstypId}"/>
+                    <h:outputText value="#{schiffstypController.selected.schiffstypId}" title="#{bundle.ViewSchiffstypTitle_schiffstypId}"/>
+                    <h:outputText value="#{bundle.ViewSchiffstypLabel_schiff}"/>
+                    <h:outputText value="#{schiffstypController.selected.schiff}" title="#{bundle.ViewSchiffstypTitle_schiff}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{schiffstypController.destroyAndView}" value="#{bundle.ViewSchiffstypDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSchiffstypEditLink}"/>
+                <br />
+                <h:commandLink action="#{schiffstypController.prepareCreate}" value="#{bundle.ViewSchiffstypCreateLink}" />
+                <br />
+                <h:commandLink action="#{schiffstypController.prepareList}" value="#{bundle.ViewSchiffstypShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSchiffstypIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

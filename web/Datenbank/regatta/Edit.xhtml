@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRegattaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_regattaId}" for="regattaId" />
+                    <h:inputText id="regattaId" value="#{regattaController.selected.regattaId}" title="#{bundle.EditRegattaTitle_regattaId}" required="true" requiredMessage="#{bundle.EditRegattaRequiredMessage_regattaId}"/>
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_preisgeld}" for="preisgeld" />
+                    <h:inputText id="preisgeld" value="#{regattaController.selected.preisgeld}" title="#{bundle.EditRegattaTitle_preisgeld}" />
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_enddatum}" for="enddatum" />
+                    <h:inputText id="enddatum" value="#{regattaController.selected.enddatum}" title="#{bundle.EditRegattaTitle_enddatum}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_startdatum}" for="startdatum" />
+                    <h:inputText id="startdatum" value="#{regattaController.selected.startdatum}" title="#{bundle.EditRegattaTitle_startdatum}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_ort}" for="ort" />
+                    <h:inputText id="ort" value="#{regattaController.selected.ort}" title="#{bundle.EditRegattaTitle_ort}" />
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_boje}" for="boje" />
+                    <h:selectOneMenu id="boje" value="#{regattaController.selected.boje}" title="#{bundle.EditRegattaTitle_boje}" required="true" requiredMessage="#{bundle.EditRegattaRequiredMessage_boje}">
+                        <f:selectItems value="#{bojeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRegattaLabel_schiff}" for="schiff" />
+                    <h:selectOneMenu id="schiff" value="#{regattaController.selected.schiff}" title="#{bundle.EditRegattaTitle_schiff}" required="true" requiredMessage="#{bundle.EditRegattaRequiredMessage_schiff}">
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{regattaController.update}" value="#{bundle.EditRegattaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRegattaViewLink}"/>
+                <br />
+                <h:commandLink action="#{regattaController.prepareList}" value="#{bundle.EditRegattaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRegattaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

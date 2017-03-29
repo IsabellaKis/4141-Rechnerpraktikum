@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditBojeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditBojeLabel_bojeId}" for="bojeId" />
+                    <h:inputText id="bojeId" value="#{bojeController.selected.bojeId}" title="#{bundle.EditBojeTitle_bojeId}" required="true" requiredMessage="#{bundle.EditBojeRequiredMessage_bojeId}"/>
+                    <h:outputLabel value="#{bundle.EditBojeLabel_BLatitude}" for="BLatitude" />
+                    <h:inputText id="BLatitude" value="#{bojeController.selected.BLatitude}" title="#{bundle.EditBojeTitle_BLatitude}" />
+                    <h:outputLabel value="#{bundle.EditBojeLabel_BLongitude}" for="BLongitude" />
+                    <h:inputText id="BLongitude" value="#{bojeController.selected.BLongitude}" title="#{bundle.EditBojeTitle_BLongitude}" />
+                    <h:outputLabel value="#{bundle.EditBojeLabel_regatta}" for="regatta" />
+                    <h:selectOneMenu id="regatta" value="#{bojeController.selected.regatta}" title="#{bundle.EditBojeTitle_regatta}" >
+                        <f:selectItems value="#{regattaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{bojeController.update}" value="#{bundle.EditBojeSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditBojeViewLink}"/>
+                <br />
+                <h:commandLink action="#{bojeController.prepareList}" value="#{bundle.EditBojeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditBojeIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

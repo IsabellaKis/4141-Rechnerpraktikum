@@ -1,8 +1,4 @@
 package Schiff;
-<<<<<<< HEAD
-
-=======
->>>>>>> adb44156718025348559017088ad8c10719ac5c7
 public class Schiff {
     
     

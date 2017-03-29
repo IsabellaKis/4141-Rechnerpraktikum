@@ -1,12 +1,6 @@
-<<<<<<< HEAD:src/java/Schiff/schiffSimulation.java
-package Schiff;
-
-=======
-
 package Schiff;
 
 
->>>>>>> adb44156718025348559017088ad8c10719ac5c7:src/java/Schiff/SchiffSimulation.java
 import java.util.Timer;
 import java.util.TimerTask;
 import java.text.DecimalFormat;

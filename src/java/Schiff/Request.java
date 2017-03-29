@@ -1,5 +1,18 @@
 package Schiff;
 public class Request {
+    
+        boolean DoLogEntry;
+
+    public boolean isDoLogEntry() {
+        return DoLogEntry;
+    }
+
+    public void setDoLogEntry(boolean DoLogEntry) {
+        this.DoLogEntry = DoLogEntry;
+    }
+        
+    
+    
      double rl;
         public void setRl (double rl) {
             this.rl = rl;

@@ -1,5 +1,12 @@
+<<<<<<< HEAD:src/java/Schiff/schiffSimulation.java
 package Schiff;
 
+=======
+
+package Schiff;
+
+
+>>>>>>> adb44156718025348559017088ad8c10719ac5c7:src/java/Schiff/SchiffSimulation.java
 import java.util.Timer;
 import java.util.TimerTask;
 import java.text.DecimalFormat;
@@ -11,7 +18,7 @@ import java.util.ListIterator;
 
 
 
-public class schiffSimulation {
+public class SchiffSimulation {
    
     public static String LOGTITLE =
             "T" +" "+"Wg"+" "+"Wr"+" "+"Rl"+" "+"Bam"+" "+"Sfr"+" "+"Rpm"+ " " + "Eon" + " " + "Adn" +" " +"Vr" +" "+"Wew"+ " " +"Swg"+ " " +"Swr"+ " " +"Ra" + " " +"Brs"+ " " +"Brb"+ " " +"Br" + " " +"Bw" + " " +"Kil"+" "+"Bug"+" "+"Sf" + " " +"Sew"+ " " +"Wm" + " " +"Sm" + " " +"Vm" + " " +"Bm" + " " +"V"  + " " +"K"  + " " +"Kn"  + " " +"Kmm"+ " " +"Km" + " " +"Am" + " "+"Kw"+" "+"Ks" + " " +"Kv" + " " +"Lat"+ " " +"Lon"+ " " +    "|";
@@ -20,7 +27,7 @@ public class schiffSimulation {
     Schiff s = new Schiff();
     Wetter w = new Wetter();
     Timer timer = new Timer();
-    boolean token=false;
+    
 
     public void simulation()
     {
@@ -124,14 +131,10 @@ public class schiffSimulation {
         System.out.println(log);
         //task.writeLog(log, Logger.SIM);
         //System.out.println("nachmon")
-
-
-        //System.out.println(s.getSchiffsname()+"  "+ s.getV()+"  "+s.getLat()+"  "+s.getLon());
+        
         x++;
-
-
-
-            if(token){
+        
+            if(s.isToken()){
             if(x==10){
             } else {
             timer.schedule(new TimerTask(){ public void run(){neuerImpuls();}},500);
@@ -457,7 +460,8 @@ public class schiffSimulation {
         }
     }
 
-    public void digest(Request req){
+   
+     public void digest(Request req){
         s.setRl(req.getRl());
         s.setBam(req.getBam());
         s.setSfr(req.getSfr());
@@ -471,12 +475,12 @@ public class schiffSimulation {
 
         // hier fehlen noch die ganzen schalter und listen operationen
         // wpOperation, doLogEntry
-
-        /*if(req.isDoLogEntry()) {
+/*
+        if(req.isDoLogEntry()) {
             doLogEntry();
             req.setDoLogEntry(false); // Schalter zuruecksetzen
         }
-
+/*
         doLogOperation(req.getLgop());
         req.setLgop(""); // Zurücksetzen
 
@@ -488,7 +492,7 @@ public class schiffSimulation {
 
 
     public void neuerImpuls(){
-
+        
         simulation();
 
 
@@ -523,7 +527,7 @@ public class schiffSimulation {
 
       // Verwaltungfunktionen Operationen: i= insert, u=update (immer nur das erste der eingabeliste), d=delete
     // Beispiel "d 3" loescht das dritte objekt
-/*
+
     public void doOperation(String op, List ipl, List obl) {
 
 
@@ -543,7 +547,7 @@ public class schiffSimulation {
         }
 
     }
-
+/*
     public void doLogOperation(String logop) {
 
         if (logop.equals("")) { return; }
@@ -572,7 +576,7 @@ public class schiffSimulation {
 
 
     }
-
+    
     public void doLogEntry() {
 
         List<LogBookEntry> lbe = (List<LogBookEntry>) s.getLogBookEntries();
@@ -829,11 +833,12 @@ public class schiffSimulation {
 
     public void initialisiere(){
         count++;
-        token = true;
-        s.setSchiffsname("proto"+ count);
+        
+        s.setSchiffsname("s"+ count);
         s.setLon(0);
         s.setLat(0);
-
+        
+        s.setToken(false);
         s.setT(0);
         s.setWg(10);
         s.setWr(270);
@@ -931,7 +936,7 @@ public class schiffSimulation {
     }
 
     public static void main(String[] args){
-        schiffSimulation sim = new schiffSimulation();
+        SchiffSimulation sim = new SchiffSimulation();
        System.out.println(LOGTITLE);
         sim.initialisiere();
 

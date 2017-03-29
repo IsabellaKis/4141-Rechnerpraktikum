@@ -13,7 +13,7 @@ import java.util.ListIterator;
 
 
 
-public class schiffSimulation {
+public class SchiffSimulation {
    
     public static String LOGTITLE =
             "T" +" "+"Wg"+" "+"Wr"+" "+"Rl"+" "+"Bam"+" "+"Sfr"+" "+"Rpm"+ " " + "Eon" + " " + "Adn" +" " +"Vr" +" "+"Wew"+ " " +"Swg"+ " " +"Swr"+ " " +"Ra" + " " +"Brs"+ " " +"Brb"+ " " +"Br" + " " +"Bw" + " " +"Kil"+" "+"Bug"+" "+"Sf" + " " +"Sew"+ " " +"Wm" + " " +"Sm" + " " +"Vm" + " " +"Bm" + " " +"V"  + " " +"K"  + " " +"Kn"  + " " +"Kmm"+ " " +"Km" + " " +"Am" + " "+"Kw"+" "+"Ks" + " " +"Kv" + " " +"Lat"+ " " +"Lon"+ " " +    "|";
@@ -934,7 +934,7 @@ public class schiffSimulation {
     }
 
     public static void main(String[] args){
-        schiffSimulation sim = new schiffSimulation();
+        SchiffSimulation sim = new SchiffSimulation();
        System.out.println(LOGTITLE);
         sim.initialisiere();
 

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Bestandsübersicht</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="tableForm"> 
+            <p:poll interval="#{StorageView.verbrauchInterval}" listener="#{StorageView.verbrauch}" update=":tableForm"/>
+            <p:growl id="msgs" showDetail="true"/>
+            
+            <p:dataTable id="lager" var="lager" value="#{StorageView.getLager()}" editable="true" style="margin-bottom:20px">
+                <f:facet name="header">
+                    Bestand an Board
+                    <p:commandButton id="toggler" type="button" value="Columns" style="float:right" icon="ui-icon-calculator" />
+                    <p:columnToggler datasource="lager" trigger="toggler" />
+                </f:facet>
+ 
+                <p:ajax event="rowEdit" listener="#{StorageView.onRowEdit}" update=":tableForm:msgs"/>
+                <p:ajax event="rowEditCancel" listener="#{StorageView.onRowCancel}" update=":tableForm:msgs" />
+ 
+                <p:column headerText="Artikel" sortBy="#{lager.name}">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{lager.name}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="modelInput" value="#{lager.name}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Anzahl/Stück">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{lager.vorrat}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{lager.vorrat}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Einheit (kg, l, Stk)">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{lager.einheit}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{lager.einheit}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Preis (Euro pro Stück)">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{lager.preis}" /></f:facet>
+                        <f:facet name="input"><p:inputText value="#{lager.preis}" style="width:100%" label="Year"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+       
+                <p:column headerText="Gesamtwert des Lagerbestands">
+                    <h:outputText value="#{StorageView.getGesamt(lager.vorrat, lager.preis)}" />
+                </p:column>
+ 
+                <p:column style="width:32px">
+                    <p:rowEditor />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        
+        
+        <br/>
+        <br/>
+        <h:form id="insertForm">
+        <!-- Label "Stück" + Textbox -->
+        <label>Artikel &nbsp;&nbsp;&nbsp;</label>  
+        <p:inputText value="#{StorageView.art}"></p:inputText>
+        <br/>
+        <br/>
+        <label>Stück &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+        <p:inputText value="#{StorageView.vorrat}"></p:inputText>
+        <br/>
+        <br/>
+        <label>Einheit &nbsp;&nbsp;&nbsp;</label> 
+        <p:inputText value="#{StorageView.einheit}"></p:inputText>
+        <br/>
+        <br/>
+        <label>Preis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+        <p:inputText value="#{StorageView.preis}"></p:inputText>
+        <br/>
+        <br/>
+        <!-- Ende Label + Textbox
+        <br/>
+        <br/>
+        <label>Stück &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>  
+        <p:inputText id="textboxEinheit"></p:inputText>
+        <br/>
+        <br/>
+        <label>Einheit &nbsp;&nbsp;&nbsp;</label>  
+        <p:inputText></p:inputText>
+        <br/>
+        <br/>
+        <label>Preis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>  
+        <p:inputText></p:inputText>
+        <br/>
+        <br/> -->
+        <p:commandButton value="Hinzufügen" id="buttonHinzufügen" actionListener="#{StorageView.addItem()}" ajax="false" />
+        </h:form>
+        <!-- Ende Button -->
+        
+    </h:body>
+</html>

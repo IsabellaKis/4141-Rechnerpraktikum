@@ -3,15 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Wetter.java</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/LoginCode.java</file>
             <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/web/ClientframeworkLogin/index.xhtml</file>
-=======
-            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Schiff.java</file>
-            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Request.java</file>
-            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/schiffSimulation.java</file>
-            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Wetter.java</file>
->>>>>>> adb44156718025348559017088ad8c10719ac5c7
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Schiff.java</file>
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/SchiffSimulation.java</file>
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/MainPage.java</file>
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Request.java</file>
+            <file>file:/home/h1550955/SR/NetBeansProjects/4141-Rechnerpraktikum/web/ClientframeworkLogin/loginPage.xhtml</file>
         </group>
     </open-files>
 </project-private>

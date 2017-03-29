@@ -1,3 +1,5 @@
+package ClientframeworkLogin;
+
 
 import javax.faces.bean.ManagedBean;
 

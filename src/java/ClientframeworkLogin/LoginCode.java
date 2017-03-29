@@ -1,3 +1,5 @@
+package ClientframeworkLogin;
+
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;

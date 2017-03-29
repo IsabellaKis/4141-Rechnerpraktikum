@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHafeneckpunktTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListHafeneckpunktEmpty}" rendered="#{hafeneckpunktController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{hafeneckpunktController.items.rowCount > 0}">
+                    <h:outputText value="#{hafeneckpunktController.pagination.pageFirstItem + 1}..#{hafeneckpunktController.pagination.pageLastItem + 1}/#{hafeneckpunktController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{hafeneckpunktController.previous}" value="#{bundle.Previous} #{hafeneckpunktController.pagination.pageSize}" rendered="#{hafeneckpunktController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{hafeneckpunktController.next}" value="#{bundle.Next} #{hafeneckpunktController.pagination.pageSize}" rendered="#{hafeneckpunktController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{hafeneckpunktController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHafeneckpunktTitle_HLatitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.HLatitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHafeneckpunktTitle_HLongitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.HLongitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHafeneckpunktTitle_hafeneckpunktId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hafeneckpunktId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHafeneckpunktTitle_hafen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hafen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{hafeneckpunktController.prepareView}" value="#{bundle.ListHafeneckpunktViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{hafeneckpunktController.prepareEdit}" value="#{bundle.ListHafeneckpunktEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{hafeneckpunktController.destroy}" value="#{bundle.ListHafeneckpunktDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{hafeneckpunktController.prepareCreate}" value="#{bundle.ListHafeneckpunktCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListHafeneckpunktIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

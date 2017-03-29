@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditBestandTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditBestandLabel_bestandId}" for="bestandId" />
+                    <h:inputText id="bestandId" value="#{bestandController.selected.bestandId}" title="#{bundle.EditBestandTitle_bestandId}" required="true" requiredMessage="#{bundle.EditBestandRequiredMessage_bestandId}"/>
+                    <h:outputLabel value="#{bundle.EditBestandLabel_stueck}" for="stueck" />
+                    <h:inputText id="stueck" value="#{bestandController.selected.stueck}" title="#{bundle.EditBestandTitle_stueck}" />
+                    <h:outputLabel value="#{bundle.EditBestandLabel_einheit}" for="einheit" />
+                    <h:inputText id="einheit" value="#{bestandController.selected.einheit}" title="#{bundle.EditBestandTitle_einheit}" />
+                    <h:outputLabel value="#{bundle.EditBestandLabel_preis}" for="preis" />
+                    <h:inputText id="preis" value="#{bestandController.selected.preis}" title="#{bundle.EditBestandTitle_preis}" />
+                    <h:outputLabel value="#{bundle.EditBestandLabel_artikel}" for="artikel" />
+                    <h:selectOneMenu id="artikel" value="#{bestandController.selected.artikel}" title="#{bundle.EditBestandTitle_artikel}" required="true" requiredMessage="#{bundle.EditBestandRequiredMessage_artikel}">
+                        <f:selectItems value="#{artikelController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditBestandLabel_schiff}" for="schiff" />
+                    <h:selectOneMenu id="schiff" value="#{bestandController.selected.schiff}" title="#{bundle.EditBestandTitle_schiff}" required="true" requiredMessage="#{bundle.EditBestandRequiredMessage_schiff}">
+                        <f:selectItems value="#{schiffController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{bestandController.update}" value="#{bundle.EditBestandSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditBestandViewLink}"/>
+                <br />
+                <h:commandLink action="#{bestandController.prepareList}" value="#{bundle.EditBestandShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditBestandIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

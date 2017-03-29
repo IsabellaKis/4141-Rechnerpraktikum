@@ -1,3 +1,4 @@
+package Schiff;
 
 public class Schiff {
     boolean kil;

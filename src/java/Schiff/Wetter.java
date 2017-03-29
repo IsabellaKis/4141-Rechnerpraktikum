@@ -1,4 +1,4 @@
-
+package Schiff;
 public class Wetter {
             int wf = 10;
         int wd = 10;

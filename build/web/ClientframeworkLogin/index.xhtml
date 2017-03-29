@@ -10,128 +10,137 @@
     </h:head>
     <h:body>
         <h:form>
-             
-        <h:panelGroup id="doBtn">
-            <!-- LOGIN -->   
-            <p:link value="Login" rendered="#{mainPage.isLog}" outcome="loginPage"></p:link> 
-             <!-- REGISTER -->
-            <p:link value="Regist" rendered="#{mainPage.isLog}" outcome="registPage"></p:link> 
-          
-        </h:panelGroup>
-        <br></br>
-         <h:panelGroup id="unDoBtn">
-             <p:commandLink value="Abmelden" rendered="#{!mainPage.isLog}" action="#{mainPage.abmeldeListener()}" update="doBtn,unDoBtn">
-            </p:commandLink>
-        </h:panelGroup>
-        
-       
-        
-         <!-- MASCHINE -->
-        
-        <p:panel id="maschine" header="Maschine" style="margin-bottom:20px">
-        <h:panelGrid columns="1" cellpadding="10">
-            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-        </h:panelGrid>
-        </p:panel>   
-       
-        
-         <!-- SEGEL -->
-        
-        <p:panel id="segel" header="Segel" style="margin-bottom:20px">
-        <h:panelGrid columns="1" cellpadding="10">
-            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-        </h:panelGrid>
-        </p:panel>   
-        
-         
-        <!-- RADIO -->
-        
-        <p:panel id="radio" header="RADIO" style="margin-bottom:20px">
-        <h:panelGrid columns="1" cellpadding="10">
-            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-        </h:panelGrid>
-        </p:panel>   
-        
-        
-        <!-- SCHIFF -->
-        
-        <p:panel id="schiff" header="SCHIFF" style="margin-bottom:20px">
-        <h:panelGrid columns="1" cellpadding="10">
-            <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-        </h:panelGrid>
-        </p:panel>   
-        
-         
-        <!--SEEKARTE, WETTER, RADAR, WIND, HAFEN -->
-    
-        
-        <p:tabView>
-            <!-- SEEKARTE -->
-            <p:tab title="Seekarte">
+
+            <h:panelGroup id="doBtn">
+                <!-- LOGIN -->   
+                <p:link value="Login" rendered="#{mainPage.isLog}" outcome="loginPage"></p:link> 
+                <!-- REGISTER -->
+                <p:link value="Regist" rendered="#{mainPage.isLog}" outcome="registPage"></p:link> 
+
+            </h:panelGroup>
+            <br></br>
+            <h:panelGroup id="unDoBtn">
+                <p:commandLink value="Abmelden" rendered="#{!mainPage.isLog}" action="#{mainPage.abmeldeListener()}" update="doBtn,unDoBtn">
+                </p:commandLink>
+            </h:panelGroup>
+
+
+
+            <!-- Schiff/Werft -->
+
+            <p:panel id="SoW" header="#{mainPage.panelHeader}" style="margin-bottom:20px">
+                <h:panelGrid columns="1" cellpadding="10">
+                    <ui:include src="#{mainPage.werftOrFahrten()}" /> <!-- Change this to file name -->
+                </h:panelGrid>
+            </p:panel>
+
+
+            <!-- MASCHINE -->
+
+            <p:panel id="maschine" header="Maschine" style="margin-bottom:20px">
                 <h:panelGrid columns="1" cellpadding="10">
                     <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
                 </h:panelGrid>
-            </p:tab>
-        
-            
-            <!-- WETTER -->
-            <p:tab title="WETTER">
+            </p:panel>   
+
+
+            <!-- SEGEL -->
+
+            <p:panel id="segel" header="Segel" style="margin-bottom:20px">
                 <h:panelGrid columns="1" cellpadding="10">
                     <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
                 </h:panelGrid>
-            </p:tab>
-            
-            <!-- RADAR -->
-            <p:tab title="RADAR">
+            </p:panel>   
+
+
+            <!-- RADIO -->
+
+            <p:panel id="radio" header="RADIO" style="margin-bottom:20px">
                 <h:panelGrid columns="1" cellpadding="10">
                     <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
                 </h:panelGrid>
-            </p:tab>
-            
-            <!-- WIND -->
-            <p:tab title="WIND">
+            </p:panel>   
+
+
+            <!-- SCHIFF -->
+
+            <p:panel id="schiff" header="SCHIFF" style="margin-bottom:20px">
                 <h:panelGrid columns="1" cellpadding="10">
                     <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
                 </h:panelGrid>
-            </p:tab>
-            
-            <!-- HAFEN -->
-            <p:tab title="HAFEN">
-                <h:panelGrid columns="1" cellpadding="10">
-                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-                </h:panelGrid>
-            </p:tab>
-        </p:tabView>
-   
-        
-     <!-- NAVIGATION, LOG, CREW -->
-    
-        
-        <p:tabView>
-            <!-- NAVIGATION -->
-            <p:tab title="NAVIGATION">
-                <h:panelGrid columns="1" cellpadding="10">
-                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-                </h:panelGrid>
-            </p:tab>
-        
-            
-            <!-- LOG -->
-            <p:tab title="LOG">
-                <h:panelGrid columns="1" cellpadding="10">
-                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-                </h:panelGrid>
-            </p:tab>
-            
-            <!-- CREW -->
-            <p:tab title="CREW">
-                <h:panelGrid columns="1" cellpadding="10">
-                    <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
-                </h:panelGrid>
-            </p:tab>
-        </p:tabView>
-    </h:form>  
-        
+            </p:panel>   
+
+
+            <!--SEEKARTE, WETTER, RADAR, WIND, HAFEN -->
+
+
+            <p:tabView>
+                <!-- SEEKARTE -->
+                <p:tab title="Seekarte">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+
+                <!-- WETTER -->
+                <p:tab title="WETTER">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+                <!-- RADAR -->
+                <p:tab title="RADAR">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+                <!-- WIND -->
+                <p:tab title="WIND">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+                <!-- HAFEN -->
+                <p:tab title="HAFEN">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+            </p:tabView>
+
+
+            <!-- NAVIGATION, LOG, CREW -->
+
+
+            <p:tabView>
+                <!-- NAVIGATION -->
+                <p:tab title="NAVIGATION">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+
+                <!-- LOG -->
+                <p:tab title="LOG">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+
+                <!-- CREW -->
+                <p:tab title="CREW">
+                    <h:panelGrid columns="1" cellpadding="10">
+                        <ui:include src="maschine.xhtml" /> <!-- Change this to file name -->
+                    </h:panelGrid>
+                </p:tab>
+            </p:tabView>
+        </h:form>  
+
     </h:body>
 </html>
 

@@ -22,7 +22,7 @@ public class SchiffSimulation {
     Schiff s = new Schiff();
     Wetter w = new Wetter();
     Timer timer = new Timer();
-    boolean token=false;
+    
 
     public void simulation()
     {
@@ -126,13 +126,9 @@ public class SchiffSimulation {
         System.out.println(log);
         //task.writeLog(log, Logger.SIM);
         //System.out.println("nachmon")
-
-
-        //System.out.println(s.getSchiffsname()+"  "+ s.getV()+"  "+s.getLat()+"  "+s.getLon());
+        
         x++;
-
-
-
+        
             if(token){
             if(x==10){
             } else {
@@ -832,11 +828,12 @@ public class SchiffSimulation {
 
     public void initialisiere(){
         count++;
-        token = true;
-        s.setSchiffsname("proto"+ count);
+        
+        s.setSchiffsname("s"+ count);
         s.setLon(0);
         s.setLat(0);
-
+        
+        s.setToken(false);
         s.setT(0);
         s.setWg(10);
         s.setWr(270);

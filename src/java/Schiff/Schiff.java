@@ -1,6 +1,23 @@
 package Schiff;
 public class Schiff {
-    boolean kil;
+    
+    
+    
+    
+    
+        boolean token;
+
+        public boolean isToken() {
+        return token;
+        }
+
+        public void setToken(boolean token) {
+        this.token = token;
+        }
+        
+    
+    
+        boolean kil;
         public boolean isKil(){
            kil=false;
            return kil;
@@ -23,12 +40,12 @@ public class Schiff {
             return eon;
         }
 
-        double Mm;
-        public void setMm(double Mm){
-            this.Mm= Mm;
+        double mm;
+        public void setMm(double mm){
+            this.mm= mm;
         }
         public double getMm(){
-            return Mm;
+            return mm;
         }
 
         int m;

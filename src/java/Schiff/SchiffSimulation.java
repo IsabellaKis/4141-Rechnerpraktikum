@@ -832,7 +832,7 @@ public class SchiffSimulation {
         s.setLon(0);
         s.setLat(0);
         
-        s.setToken(false);
+        s.setToken(true);
         s.setT(0);
         s.setWg(10);
         s.setWr(270);

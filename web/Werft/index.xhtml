@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Werft</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+                    
+                       
+            
+            
+            <br></br><br></br><br></br><br></br>
+                <h:form>    
+                    <h:panelGrid>
+                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                            <p:outputLabel for="console" value="bestehendes Schiff ändern: (optional)" />
+                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:125px" filter="true">
+                                <f:selectItem itemLabel="wähle..." itemValue="x" />
+                                <f:selectItem itemLabel="wähle..." itemValue="" />
+                                <f:selectItem itemLabel="aSchiff" itemValue="a" />
+                                <f:selectItem itemLabel="bSchiff" itemValue="b" />
+                                <f:selectItem itemLabel="cSchiff" itemValue="c" />
+                                <f:selectItem itemLabel="cSchiff2" itemValue="c2" />
+                                <f:selectItem itemLabel="dSchiff" itemValue="d" />
+                                <f:selectItem itemLabel="eSchiff" itemValue="e" />
+                                <f:selectItem itemLabel="fSchiff" itemValue="f" />
+                                <f:selectItem itemLabel="gSchiff" itemValue="g" />
+                                <f:selectItem itemLabel="hSchiff" itemValue="h" />
+                                <f:selectItem itemLabel="iSchiff" itemValue="i" />
+                                <f:selectItem itemLabel="jSchiff" itemValue="j" />
+                                <f:selectItem itemLabel="kSchiff" itemValue="k" />
+                                <f:selectItem itemLabel="lSchiff" itemValue="l" />
+                                <f:selectItem itemLabel="mSchiff" itemValue="m" /> 
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                               
+                        <p:commandButton value="in Formular übernehmen" update="display" oncomplete="PF('dlg').show()" icon="ui-icon-check" />
+
+                        <p:dialog header="Übernommene Werte" modal="true" showEffect="bounce" widgetVar="dlg" resizable="false">
+                            <p:panelGrid columns="2" id="display" columnClasses="label,value">
+                                <h:outputText value="Übernommen:" />
+                                <h:outputText value="#{selectOneMenuView.console}" />                        
+                            </p:panelGrid>
+                        </p:dialog>
+                    </h:panelGrid>
+                </h:form> 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <h:form>
+                <p:panel header="Schiffsdaten">
+                    <p:messages autoUpdate="true"/>
+                    
+                    
+                    
+                    <h:panelGrid>
+                        <h:panelGrid id="grid" columns="4" cellpadding="5">
+                            <h:outputLabel for="Schiffsname:" value="Schiffsname: " style="font-weight:bold"/>                    
+                            <p:inputText id="Schiffsname" placeholder="Name Ihrer Wahl" value="#{validationView.schiffsname}" required="true" label="Schiffsname"/>
+                            <p:message for="Schiffsname" />
+                            <h:outputText value="#{validationView.schiffsname}" />
+
+
+
+
+
+                            <h:outputLabel value="Segelgröße (in m²):" style="font-weight:bold"/>                    
+                            <p:inputText id="sfm" placeholder="1-300" value="#{validationView.sfm}" required="true" label="sfm">
+                                <f:validateDoubleRange minimum="1" maximum="300" />
+                            </p:inputText>
+                            <p:message for="sfm" />
+                            <h:outputText value="#{validationView.sfm}" />
+
+
+
+                            <h:outputLabel value="Gewicht (in kg):" style="font-weight:bold"/>                    
+                            <p:inputText id="m" placeholder="1-12.000" value="#{validationView.m}" required="true" label="m">
+                                <f:validateDoubleRange minimum="1" maximum="12000" />
+                            </p:inputText>
+                            <p:message for="m" />
+                            <h:outputText value="#{validationView.m}" />
+
+
+
+                            <h:outputLabel value="Lateralplan (in m²):" style="font-weight:bold"/>                    
+                            <p:inputText id="lp" placeholder="1-50" value="#{validationView.lp}" required="true" label="lp">
+                                <f:validateDoubleRange minimum="1" maximum="50" />
+                            </p:inputText>
+                            <p:message for="lp" />
+                            <h:outputText value="#{validationView.lp}" />
+
+
+
+                            <h:outputLabel value="Schiffslänge Wasserlinie (in m):" style="font-weight:bold"/>                    
+                            <p:inputText id="lwl" placeholder="1-15" value="#{validationView.lwl}" required="true" label="lwl">
+                                <f:validateDoubleRange minimum="1" maximum="15" />
+                            </p:inputText>
+                            <p:message for="lwl" />
+                            <h:outputText value="#{validationView.lwl}" />
+
+
+
+                            <h:outputLabel value="Aufrichtemoment max (in N):" style="font-weight:bold"/>                    
+                            <p:inputText id="amm" placeholder="1-20.000" value="#{validationView.amm}" required="true" label="amm">
+                                <f:validateDoubleRange minimum="1" maximum="20000" />
+                            </p:inputText>
+                            <p:message for="amm" />
+                            <h:outputText value="#{validationView.amm}" />
+
+
+
+                            <h:outputLabel value="Lateralbremsmoment (in N):" style="font-weight:bold"/>                    
+                            <p:inputText id="lbm" placeholder="1-9.000" value="#{validationView.lbm}" required="true" label="lbm">
+                                <f:validateDoubleRange minimum="1" maximum="9000" />
+                            </p:inputText>
+                            <p:message for="lbm" />
+                            <h:outputText value="#{validationView.lbm}" />
+
+
+
+                            <h:outputLabel value="Tankinhalt (in Liter):" style="font-weight:bold"/>                    
+                            <p:inputText id="ksm" placeholder="1-300" value="#{validationView.ksm}" required="true" label="ksm">
+                                <f:validateDoubleRange minimum="1" maximum="300" />
+                            </p:inputText>
+                            <p:message for="ksm" />
+                            <h:outputText value="#{validationView.ksm}" />
+
+
+
+                            <h:outputLabel value="Verbrauch (in l/h):" style="font-weight:bold"/>                    
+                            <p:inputText id="ksv" placeholder="1-7" value="#{validationView.ksv}" required="true" label="ksv">
+                                <f:validateDoubleRange minimum="1" maximum="7" />
+                            </p:inputText>
+                            <p:message for="ksv" />
+                            <h:outputText value="#{validationView.ksv}" />
+
+
+
+                            <h:outputLabel value="Maschinenumdrehungen (in U/min):" style="font-weight:bold"/>                    
+                            <p:inputText id="rpmm" placeholder="1-4.000" value="#{validationView.rpmm}" required="true" label="rpmm">
+                                <f:validateDoubleRange minimum="1" maximum="4000" />
+                            </p:inputText>
+                            <p:message for="rpmm" />
+                            <h:outputText value="#{validationView.rpmm}" />
+
+
+
+
+                            <h:outputLabel value="Abstand vom Heck zum Drehpunkt (in cm):" style="font-weight:bold"/>                    
+                            <p:inputText id="ddp" placeholder="100-700" value="#{validationView.ddp}" required="true" label="ddp">
+                                <f:validateDoubleRange minimum="100" maximum="700" />
+                            </p:inputText>
+                            <p:message for="ddp" />
+                            <h:outputText value="#{validationView.ddp}" />
+
+
+
+
+                            <h:outputLabel value="Abstand vom Heck zur Schraube (in cm):" style="font-weight:bold"/>                    
+                            <p:inputText id="dds" placeholder="0-200" value="#{validationView.dds}" required="true" label="dds">
+                                <f:validateDoubleRange minimum="0" maximum="200" />
+                            </p:inputText>
+                            <p:message for="dds" />
+                            <h:outputText value="#{validationView.dds}" />
+
+
+
+
+                            <h:outputLabel value="Leistung Motor (in kW):" style="font-weight:bold"/>                    
+                            <p:inputText id="lm" placeholder="1-81" value="#{validationView.lm}" required="true" label="lm">
+                                <f:validateDoubleRange minimum="1" maximum="81" />
+                            </p:inputText>
+                            <p:message for="lm" />
+                            <h:outputText value="#{validationView.lm}" />
+
+
+                        </h:panelGrid>
+
+                        <p:commandButton value="Erstellen!" ajax="false" icon="ui-icon-check" validateClient="true" style="margin-right:10px"/>
+                        <h:commandButton type="reset" value="Eingabe löschen"/>
+                    </h:panelGrid>
+
+                </p:panel>
+            </h:form>
+        </h:body>
+
+    </f:view>
+</html>
+

@@ -129,7 +129,7 @@ public class SchiffSimulation {
         
         x++;
         
-            if(token){
+            if(s.isToken()){
             if(x==10){
             } else {
             timer.schedule(new TimerTask(){ public void run(){neuerImpuls();}},500);

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/HafeneckpunktController.java</file>
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/RouteController.java</file>
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_beanutil/JsfUtil.java</file>
@@ -48,6 +49,12 @@
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Artikel.java</file>
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/BenutzerController.java</file>
             <file>file:/home/h1451938/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Database_bean/Bundle.properties</file>
+=======
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Schiff.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Request.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/schiffSimulation.java</file>
+            <file>file:/home/h1254792/SR/NetBeansProjects/4141-Rechnerpraktikum/src/java/Schiff/Wetter.java</file>
+>>>>>>> 4abcfdf8a0080b55ebbcf81c72b8eca86914baa3
         </group>
     </open-files>
 </project-private>

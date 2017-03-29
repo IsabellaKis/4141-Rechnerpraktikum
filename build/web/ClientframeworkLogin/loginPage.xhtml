@@ -5,7 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-        
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
@@ -16,30 +16,33 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <h:form>
-        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />   
-        <h:outputLabel for="textboxBenutzername" value="Benutzername:" />
-        <p:inputText id="textboxBenutzername" binding="#{input1}"> </p:inputText>
-       
-        <br></br>
-        <br></br>
-        
-        <h:outputLabel for="textboxPasswort" value="Passwort:"/>
-        <p:password id="textboxPasswort" binding="#{input2}"/>
-        
-        <br></br>
-        <br></br>
-        
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />   
+            <h:outputLabel for="textboxBenutzername" value="Benutzername:" />
+            <p:inputText id="textboxBenutzername" binding="#{input1}"> </p:inputText>
+
+            <br></br>
+            <br></br>
+
+            <h:outputLabel for="textboxPasswort" value="Passwort:"/>
+            <p:password id="textboxPasswort" binding="#{input2}"/>
+
+            <br></br>
+            <br></br>
+
             <p:outputLabel for="app" value="Auswählen: " />
             <p:selectOneMenu id="app" value="#{loginCode.app}" style="width:150px">
                 <p:ajax listener="#{loginCode.onAppChange}" />
                 <f:selectItem itemLabel="Fahrten Applikation" itemValue="Fahrten"/>
                 <f:selectItem itemLabel="Werft Applikation" itemValue="Werft"/>
             </p:selectOneMenu>
-        
-     
-     
-     <!--Anmelden-->
-    <p:commandButton value="Anmelden" id="buttonRegistrieren" action="#{loginCode.buttonAction(input1.value,input2.value)}" ajax="false" />
-    </h:form>
+
+
+
+            <!--Anmelden-->
+            <!----><p:commandButton value="Anmelden" id="buttonAnmelden" action="#{loginCode.buttonAction(input1.value,input2.value)}" ajax="false" />
+
+<!--<p:button value="Anmelden" id="buttonAnmelden" onclick="#{loginCode.buttonAction(input1.value,input2.value)}"/>
+            -->
+        </h:form>
     </h:body>
 </html>

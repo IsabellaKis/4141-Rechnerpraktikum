@@ -5,7 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-        
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
@@ -17,33 +17,33 @@ and open the template in the editor.
     </h:head>
     <h:body>
         <h:form>
-        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />      
-            
-        <h:outputLabel for="textboxBenutzernameReg" value="Benutzername:" />
-        <p:inputText id="textboxBenutzernameReg" binding="#{input1}"> </p:inputText>
-        
-        <br></br>
-        <br></br>
-        
-        <h:outputLabel for="textboxPasswortReg" value="Passwort:" />
-       <!-- <p:inputText id="textboxPasswortReg" binding="#{input2}" > </p:inputText> -->
-        <p:password id="textboxPasswortReg" binding="#{input2}"/>
-        
-        
-        <br></br>
-        <br></br>
-       
-        <h:outputLabel for="textboxPasswortWdhReg" value="Passwort wiederholen:" />
-       <!-- <p:inputText id="textboxPasswortWdhReg" binding="#{input3}"> </p:inputText> -->
-        <p:password id="textboxPasswortWdhReg" binding="#{input3}"/>
-        
-        <br></br>
-        <br></br>
-        
-        <p:commandButton value="Registrieren" id="buttonRegistrieren" action="#{registCode.buttonAction(input1.value,input2.value,input3.value)}" ajax="false" />
-        
-        
-        <h:outputLabel value="#{registCode.setName()}" rendered="#{registCode.setEditMode()}" />
-       </h:form>
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />      
+
+            <h:outputLabel for="textboxBenutzernameReg" value="Benutzername:" />
+            <p:inputText id="textboxBenutzernameReg" binding="#{input1}"> </p:inputText>
+
+            <br></br>
+            <br></br>
+
+            <h:outputLabel for="textboxPasswortReg" value="Passwort:" />
+           <!-- <p:inputText id="textboxPasswortReg" binding="#{input2}" > </p:inputText> -->
+            <p:password id="textboxPasswortReg" binding="#{input2}"/>
+
+
+            <br></br>
+            <br></br>
+
+            <h:outputLabel for="textboxPasswortWdhReg" value="Passwort wiederholen:" />
+           <!-- <p:inputText id="textboxPasswortWdhReg" binding="#{input3}"> </p:inputText> -->
+            <p:password id="textboxPasswortWdhReg" binding="#{input3}"/>
+
+            <br></br>
+            <br></br>
+
+            <p:commandButton value="Registrieren" id="buttonRegistrieren" action="#{registCode.buttonAction(input1.value,input2.value,input3.value)}" ajax="false" />
+
+
+            <h:outputLabel value="#{registCode.setName()}" rendered="#{registCode.setEditMode()}" />
+        </h:form>
     </h:body>
 </html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewBojeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewBojeLabel_bojeId}"/>
+                    <h:outputText value="#{bojeController.selected.bojeId}" title="#{bundle.ViewBojeTitle_bojeId}"/>
+                    <h:outputText value="#{bundle.ViewBojeLabel_BLatitude}"/>
+                    <h:outputText value="#{bojeController.selected.BLatitude}" title="#{bundle.ViewBojeTitle_BLatitude}"/>
+                    <h:outputText value="#{bundle.ViewBojeLabel_BLongitude}"/>
+                    <h:outputText value="#{bojeController.selected.BLongitude}" title="#{bundle.ViewBojeTitle_BLongitude}"/>
+                    <h:outputText value="#{bundle.ViewBojeLabel_regatta}"/>
+                    <h:outputText value="#{bojeController.selected.regatta}" title="#{bundle.ViewBojeTitle_regatta}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{bojeController.destroyAndView}" value="#{bundle.ViewBojeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewBojeEditLink}"/>
+                <br />
+                <h:commandLink action="#{bojeController.prepareCreate}" value="#{bundle.ViewBojeCreateLink}" />
+                <br />
+                <h:commandLink action="#{bojeController.prepareList}" value="#{bundle.ViewBojeShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewBojeIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

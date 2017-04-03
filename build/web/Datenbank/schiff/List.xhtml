@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSchiffTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSchiffEmpty}" rendered="#{schiffController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{schiffController.items.rowCount > 0}">
+                    <h:outputText value="#{schiffController.pagination.pageFirstItem + 1}..#{schiffController.pagination.pageLastItem + 1}/#{schiffController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{schiffController.previous}" value="#{bundle.Previous} #{schiffController.pagination.pageSize}" rendered="#{schiffController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{schiffController.next}" value="#{bundle.Next} #{schiffController.pagination.pageSize}" rendered="#{schiffController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{schiffController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_schiffId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schiffId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_SLatitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.SLatitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_SLongitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.SLongitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_regatta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regatta}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_crew}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.crew}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_benutzer}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.benutzer}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_schiffstyp}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.schiffstyp}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_route}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.route}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSchiffTitle_bestand}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.bestand}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{schiffController.prepareView}" value="#{bundle.ListSchiffViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{schiffController.prepareEdit}" value="#{bundle.ListSchiffEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{schiffController.destroy}" value="#{bundle.ListSchiffDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{schiffController.prepareCreate}" value="#{bundle.ListSchiffCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListSchiffIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
